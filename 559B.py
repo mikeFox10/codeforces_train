@@ -19,10 +19,10 @@ def main():
 	A = stdin.readline().rstrip() 
 	B = stdin.readline().rstrip() 
 	
-	repuesta = ''
+	response = ''
 	if A == B: 
-		repuesta = 'YES'
-	if len(A) % 2 == 0 and len(B) % 2 == 0 and repuesta != 'YES':
+		response = 'YES'
+	if len(A) % 2 == 0 and len(B) % 2 == 0 and response != 'YES':
 		a1 = A[:len(A)/2]
 		a2 = A[len(A)/2:]
 
@@ -30,24 +30,24 @@ def main():
 		b2 = B[len(B)/2:]
 
 		if a1 == b1 and a2 == b2:
-			repuesta == 'YES'
+			response == 'YES'
 		
 		if a1 == b2 and a2 == b1:
-			repuesta == 'YES'
+			response == 'YES'
 
-		if repuesta != 'YES':
+		if response != 'YES':
 			a1 = getMiniumStringSorted(a1)
 			a2 = getMiniumStringSorted(a2)
 			b1 = getMiniumStringSorted(b1)
 			b2 = getMiniumStringSorted(b2)
 			#print(a1, a2, b1,b2, 'DE')
 			if a1 == b1 and a2 == b2:
-				repuesta = 'YES'
+				response = 'YES'
 			if a1 == b2 and a2 == b1:
-				repuesta = 'YES'
-	#print(repuesta, 'res')
-	if repuesta != 'YES':
-			repuesta = 'NO'
-	stdout.write(repuesta+'\n')
+				response = 'YES'
+	#print(response, 'res')
+	if response != 'YES':
+			response = 'NO'
+	stdout.write(response+'\n')
 if __name__ == "__main__": 
 	main()
