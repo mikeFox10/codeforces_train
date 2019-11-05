@@ -1,12 +1,15 @@
-n = int(input())
-aiString = input()
-visualized = [None]*3000
-a = aiString.split()
-
-for ai in a:
-    visualized[int(ai)-1] = True
-
-for index, v in enumerate(visualized):
-    if not v:
-        print(index+1)
-        break
+from sys import stdin, stdout  
+  
+def main(): 
+	n = int(stdin.readline())
+	arr = [int(x) for x in stdin.readline().split()] 
+	cache = {}
+	for x in arr: 
+		if x not in cache:
+			cache[x] = True
+	for x in range(1,3002):
+		if x not in cache:
+			stdout.write(str(x)+'\n')
+			break
+if __name__ == "__main__": 
+	main()
